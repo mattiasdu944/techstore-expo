@@ -1,12 +1,10 @@
-import React from 'react'
 import { Stack } from 'expo-router';
-import { SafeAreaView, View, ScrollView, } from 'react-native'
 
+import { SafeAreaView, View, ScrollView, } from 'react-native'
 import { CategoriesList, ProductsList, Search } from '../components';
 
 
 const Home = () => {
-    console.log('data')
     return (
         <SafeAreaView 
             style={{ backgroundColor:'white',  flex: 1 }}

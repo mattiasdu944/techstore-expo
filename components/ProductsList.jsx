@@ -1,11 +1,17 @@
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import { ProductCard } from "./ProductCard";
 import { useFetch } from "../hooks/useFetch";
+import { useRouter } from "expo-router";
 
 export const ProductsList = () => {
     
     const { data: products, isLoading } = useFetch('/products');
+    const router = useRouter();
     
+    const handleNavigation = ( term ) => {
+        router.push(`/product/${ term }`);
+    }
+
     return (
         
         <>
@@ -18,9 +24,12 @@ export const ProductsList = () => {
                     </View>
                 )
                 : (
-                    products.map( product => 
+                    products?.map( product => 
                         <View style={ styles.listProducts } key={product.id}>
-                            <ProductCard product={ product }/>
+                            <ProductCard 
+                                product={ product } 
+                                handleNavigation={ handleNavigation }
+                            />
                         </View>
                     )
                 )

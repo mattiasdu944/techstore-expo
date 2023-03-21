@@ -1,13 +1,13 @@
 import { TouchableOpacity, Text, Image, StyleSheet, View } from 'react-native'
 
 
-export const ProductCard = ({ product }) => {
+export const ProductCard = ({ product, handleNavigation }) => {
     return (
-        <TouchableOpacity style={ styles.container }>
+        <TouchableOpacity style={ styles.container } onPress={ () => handleNavigation( product.id ) }>
             <Image
                 source={{ uri: product.images[0] }}
                 style={ styles.image }
-            />
+                />
             <View>
                 <Text style={ styles.nombre }>{ product.name }</Text>
                 <Text style={ styles.category }>Categoria: { product.category }</Text>
@@ -18,17 +18,16 @@ export const ProductCard = ({ product }) => {
 }
 
 const styles = StyleSheet.create({
-    
-    container: {
-        flex: 1,
+        container:{
         display: 'flex',
-        flexDirection : 'row',
-        columnGap : 12,
-        marginBottom: 35,
         backgroundColor: '#f6f6f6',
         borderRadius: 10,
         paddingHorizontal: 15,
         paddingVertical: 10,
+        flexDirection : 'row',
+        columnGap : 12,
+        flex: 1,
+        marginBottom: 20
     },
 
     image: {

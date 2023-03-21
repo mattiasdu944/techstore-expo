@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     },
     searchButton:{
         padding: 10,
-        backgroundColor: 'black',
+        backgroundColor: 'blue',
         borderRadius: 10,        
     }
 });
