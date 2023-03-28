@@ -13,3 +13,23 @@ npx create-react-native-app -t with-router
 - [Expo Router: Docs](https://expo.github.io/router)
 - [Expo Router: Repo](https://github.com/expo/router)
 - [Request for Comments](https://github.com/expo/router/discussions/1)
+
+
+## Generate Apk
+
+```bash
+#Install eas cli for generate apk
+npm i -g eas-cli
+```
+
+```bash
+#Insert your credentials
+eas login
+```
+
+```bash
+#Insert your configuration
+eas build:configure
+
+#Create APK
+eas build -p andriod --profile preview
